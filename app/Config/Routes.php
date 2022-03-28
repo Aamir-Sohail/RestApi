@@ -38,6 +38,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/find','TodoSApiController::index');
 $routes->post('/add','TodoSApiController::Insert');
 $routes->put('/updated/(:num)','TodoSApiController::Update/$1');
+$routes->delete('/remove/(:num)','TodoSApiController::Delete/$1');
 
 /*
  * --------------------------------------------------------------------

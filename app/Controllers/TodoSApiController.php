@@ -27,7 +27,7 @@ class TodoSApiController extends BaseController
     }
     
 
-    public function Update($id){
+    public function Update($id=null){
        
         $data =$this->request->getJSON();
         if(!$data = $this->todoModel->update($id,$data)){
@@ -36,5 +36,8 @@ class TodoSApiController extends BaseController
         return $this->respondUpdated($data, 200 , 'Record Update Successfully!');
         // var_dump($data);
         // die;
+    }
+    public function Delete($id=null){
+        return $this->respond($this->todoModel->delete($id)); 
     }
 }
