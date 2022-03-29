@@ -35,7 +35,8 @@ $routes->get('/', 'Home::index');
 
 
 //ResourceFul APIZ..
-$routes->get('/find','TodoSApiController::index');
+$routes->get('/find/(:num)','TodoSApiController::index/$1');
+$routes->get('/view','TodoSApiController::View_All');
 $routes->post('/add','TodoSApiController::Insert');
 $routes->put('/updated/(:num)','TodoSApiController::Update/$1');
 $routes->delete('/remove/(:num)','TodoSApiController::Delete/$1');
